@@ -1,0 +1,709 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>For You ♡</title>
+
+    <style>
+      /* =========================
+   DASAR
+========================= */
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        height: 100vh;
+        overflow: hidden;
+
+        background:
+          radial-gradient(circle at 75% 18%, #39456d 0%, transparent 25%),
+          linear-gradient(#080d20, #171b3b 55%, #0d1812);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-family: Georgia, serif;
+      }
+
+      /* =========================
+   BULAN
+========================= */
+
+      .moon {
+        position: absolute;
+
+        width: 85px;
+        height: 85px;
+
+        top: 55px;
+        right: 12%;
+
+        border-radius: 50%;
+
+        background: #fff6cf;
+
+        box-shadow:
+          0 0 20px #fff6cf,
+          0 0 60px rgba(255, 246, 207, 0.35);
+      }
+
+      /* =========================
+   BINTANG
+========================= */
+
+      .star {
+        position: absolute;
+
+        width: 4px;
+        height: 4px;
+
+        background: white;
+
+        border-radius: 50%;
+
+        animation: twinkle 2s infinite alternate;
+      }
+
+      .s1 {
+        top: 12%;
+        left: 10%;
+      }
+      .s2 {
+        top: 25%;
+        left: 25%;
+        animation-delay: 0.5s;
+      }
+      .s3 {
+        top: 15%;
+        left: 45%;
+        animation-delay: 1s;
+      }
+      .s4 {
+        top: 30%;
+        left: 68%;
+        animation-delay: 0.3s;
+      }
+      .s5 {
+        top: 10%;
+        left: 80%;
+        animation-delay: 0.8s;
+      }
+      .s6 {
+        top: 40%;
+        left: 15%;
+        animation-delay: 1.2s;
+      }
+      .s7 {
+        top: 37%;
+        left: 90%;
+        animation-delay: 0.6s;
+      }
+      .s8 {
+        top: 20%;
+        left: 58%;
+        animation-delay: 1.5s;
+      }
+
+      @keyframes twinkle {
+        from {
+          opacity: 0.2;
+          transform: scale(0.5);
+        }
+
+        to {
+          opacity: 1;
+          transform: scale(1.5);
+        }
+      }
+
+      /* =========================
+   TULISAN
+========================= */
+
+      .message {
+        position: absolute;
+
+        top: 35px;
+
+        width: 100%;
+
+        text-align: center;
+
+        color: #ffe9ef;
+
+        opacity: 0;
+
+        animation: showMessage 2s ease 7s forwards;
+
+        text-shadow: 0 0 10px rgba(255, 170, 190, 0.7);
+      }
+
+      .message h1 {
+        margin: 0;
+
+        font-size: 34px;
+
+        font-weight: normal;
+
+        letter-spacing: 3px;
+      }
+
+      .message p {
+        margin-top: 8px;
+
+        font-size: 14px;
+
+        letter-spacing: 3px;
+
+        opacity: 0.75;
+      }
+
+      @keyframes showMessage {
+        from {
+          opacity: 0;
+          transform: translateY(15px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* =========================
+   TAMAN
+========================= */
+
+      .garden {
+        position: absolute;
+
+        bottom: 45px;
+
+        width: 100%;
+        height: 390px;
+      }
+
+      /* =========================
+   TANAH
+========================= */
+
+      .ground {
+        position: absolute;
+
+        bottom: 0;
+
+        width: 100%;
+        height: 75px;
+
+        background: #09130d;
+
+        border-radius: 50% 50% 0 0;
+      }
+
+      /* =========================
+   BUNGA
+========================= */
+
+      .flower {
+        position: absolute;
+
+        bottom: 35px;
+
+        width: 130px;
+        height: 300px;
+      }
+
+      /* POSISI BUNGA */
+
+      .flower.one {
+        left: 7%;
+        transform: scale(0.65);
+      }
+
+      .flower.two {
+        left: 24%;
+        transform: scale(0.8);
+      }
+
+      .flower.three {
+        left: 42%;
+        transform: scale(1);
+      }
+
+      .flower.four {
+        left: 61%;
+        transform: scale(0.75);
+      }
+
+      .flower.five {
+        left: 79%;
+        transform: scale(0.6);
+      }
+
+      /* =========================
+   BATANG
+========================= */
+
+      .stem {
+        position: absolute;
+
+        width: 10px;
+        height: 230px;
+
+        left: 60px;
+        bottom: 0;
+
+        background: linear-gradient(to right, #1c4b28, #55a158, #1c4b28);
+
+        border-radius: 10px;
+
+        transform-origin: bottom;
+
+        transform: scaleY(0);
+
+        animation: growStem 3s ease forwards;
+      }
+
+      .flower.two .stem {
+        animation-delay: 0.5s;
+      }
+
+      .flower.three .stem {
+        animation-delay: 1s;
+      }
+
+      .flower.four .stem {
+        animation-delay: 0.7s;
+      }
+
+      .flower.five .stem {
+        animation-delay: 0.3s;
+      }
+
+      @keyframes growStem {
+        from {
+          transform: scaleY(0);
+        }
+
+        to {
+          transform: scaleY(1);
+        }
+      }
+
+      /* =========================
+   DAUN
+========================= */
+
+      .leaf {
+        position: absolute;
+
+        width: 70px;
+        height: 35px;
+
+        background: linear-gradient(135deg, #61a963, #1d4b29);
+
+        border-radius: 100% 0 100% 0;
+
+        opacity: 0;
+      }
+
+      .leaf.left {
+        left: 2px;
+        bottom: 80px;
+
+        transform: rotate(-25deg);
+
+        animation: leafLeft 1s ease 2.5s forwards;
+      }
+
+      .leaf.right {
+        right: 0;
+        bottom: 140px;
+
+        transform: rotate(25deg);
+
+        animation: leafRight 1s ease 2.8s forwards;
+      }
+
+      @keyframes leafLeft {
+        from {
+          opacity: 0;
+          transform: rotate(-25deg) scale(0);
+        }
+
+        to {
+          opacity: 1;
+          transform: rotate(-25deg) scale(1);
+        }
+      }
+
+      @keyframes leafRight {
+        from {
+          opacity: 0;
+          transform: rotate(25deg) scale(0);
+        }
+
+        to {
+          opacity: 1;
+          transform: rotate(25deg) scale(1);
+        }
+      }
+
+      /* =========================
+   KEPALA BUNGA
+========================= */
+
+      .head {
+        position: absolute;
+
+        width: 130px;
+        height: 130px;
+
+        left: 0;
+        top: 0;
+
+        transform: scale(0);
+
+        animation: bloom 2s ease 3.5s forwards;
+      }
+
+      .flower.one .head {
+        animation-delay: 2.8s;
+      }
+
+      .flower.two .head {
+        animation-delay: 3.2s;
+      }
+
+      .flower.three .head {
+        animation-delay: 3.6s;
+      }
+
+      .flower.four .head {
+        animation-delay: 3.3s;
+      }
+
+      .flower.five .head {
+        animation-delay: 3s;
+      }
+
+      @keyframes bloom {
+        0% {
+          transform: scale(0) rotate(-15deg);
+        }
+
+        70% {
+          transform: scale(1.1) rotate(5deg);
+        }
+
+        100% {
+          transform: scale(1) rotate(0);
+        }
+      }
+
+      /* =========================
+   KELOPAK
+========================= */
+
+      .petal {
+        position: absolute;
+
+        width: 52px;
+        height: 75px;
+
+        left: 65px;
+        top: 65px;
+
+        border-radius: 50% 50% 45% 45%;
+
+        transform-origin: 50% 100%;
+
+        background: linear-gradient(#ff9db5, #d92f59);
+
+        box-shadow: 0 0 8px rgba(255, 80, 120, 0.2);
+      }
+
+      /* variasi warna */
+
+      .flower.two .petal,
+      .flower.four .petal {
+        background: linear-gradient(#ffb5d0, #db5084);
+      }
+
+      .flower.three .petal {
+        background: linear-gradient(#ff8da8, #c91e47);
+      }
+
+      /* POSISI KELOPAK */
+
+      .p1 {
+        transform: translate(-50%, -100%) rotate(0deg) translateY(-25px);
+      }
+
+      .p2 {
+        transform: translate(-50%, -100%) rotate(45deg) translateY(-25px);
+      }
+
+      .p3 {
+        transform: translate(-50%, -100%) rotate(90deg) translateY(-25px);
+      }
+
+      .p4 {
+        transform: translate(-50%, -100%) rotate(135deg) translateY(-25px);
+      }
+
+      .p5 {
+        transform: translate(-50%, -100%) rotate(180deg) translateY(-25px);
+      }
+
+      .p6 {
+        transform: translate(-50%, -100%) rotate(225deg) translateY(-25px);
+      }
+
+      .p7 {
+        transform: translate(-50%, -100%) rotate(270deg) translateY(-25px);
+      }
+
+      .p8 {
+        transform: translate(-50%, -100%) rotate(315deg) translateY(-25px);
+      }
+
+      /* =========================
+   TENGAH KUNING
+========================= */
+
+      .center {
+        position: absolute;
+
+        width: 42px;
+        height: 42px;
+
+        left: 65px;
+        top: 65px;
+
+        transform: translate(-50%, -50%);
+
+        border-radius: 50%;
+
+        background: radial-gradient(circle, #fff6a1, #f1ad29);
+
+        z-index: 20;
+
+        box-shadow: 0 0 15px rgba(255, 215, 80, 0.8);
+      }
+
+      /* =========================
+   BINTANG KECIL DI BUNGA
+========================= */
+
+      .sparkle {
+        position: absolute;
+
+        width: 5px;
+        height: 5px;
+
+        background: #ffdbe5;
+
+        border-radius: 50%;
+
+        opacity: 0;
+
+        animation: sparkle 3s infinite;
+      }
+
+      .sp1 {
+        left: 18%;
+        bottom: 48%;
+      }
+
+      .sp2 {
+        left: 78%;
+        bottom: 45%;
+        animation-delay: 1s;
+      }
+
+      .sp3 {
+        left: 35%;
+        bottom: 65%;
+        animation-delay: 2s;
+      }
+
+      .sp4 {
+        left: 90%;
+        bottom: 35%;
+        animation-delay: 1.5s;
+      }
+
+      @keyframes sparkle {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+
+        50% {
+          opacity: 1;
+          transform: translateY(-30px);
+        }
+
+        100% {
+          opacity: 0;
+          transform: translateY(-50px);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- BULAN -->
+
+    <div class="moon"></div>
+
+    <!-- BINTANG -->
+
+    <div class="star s1"></div>
+    <div class="star s2"></div>
+    <div class="star s3"></div>
+    <div class="star s4"></div>
+    <div class="star s5"></div>
+    <div class="star s6"></div>
+    <div class="star s7"></div>
+    <div class="star s8"></div>
+
+    <!-- TULISAN -->
+
+    <div class="message">
+      <h1>for you ♡</h1>
+    </div>
+
+    <!-- TAMAN -->
+
+    <div class="garden">
+      <!-- BUNGA 1 -->
+
+      <div class="flower one">
+        <div class="head">
+          <div class="petal p1"></div>
+          <div class="petal p2"></div>
+          <div class="petal p3"></div>
+          <div class="petal p4"></div>
+          <div class="petal p5"></div>
+          <div class="petal p6"></div>
+          <div class="petal p7"></div>
+          <div class="petal p8"></div>
+
+          <div class="center"></div>
+        </div>
+
+        <div class="stem"></div>
+
+        <div class="leaf left"></div>
+        <div class="leaf right"></div>
+      </div>
+
+      <!-- BUNGA 2 -->
+
+      <div class="flower two">
+        <div class="head">
+          <div class="petal p1"></div>
+          <div class="petal p2"></div>
+          <div class="petal p3"></div>
+          <div class="petal p4"></div>
+          <div class="petal p5"></div>
+          <div class="petal p6"></div>
+          <div class="petal p7"></div>
+          <div class="petal p8"></div>
+
+          <div class="center"></div>
+        </div>
+
+        <div class="stem"></div>
+
+        <div class="leaf left"></div>
+        <div class="leaf right"></div>
+      </div>
+
+      <!-- BUNGA UTAMA -->
+
+      <div class="flower three">
+        <div class="head">
+          <div class="petal p1"></div>
+          <div class="petal p2"></div>
+          <div class="petal p3"></div>
+          <div class="petal p4"></div>
+          <div class="petal p5"></div>
+          <div class="petal p6"></div>
+          <div class="petal p7"></div>
+          <div class="petal p8"></div>
+
+          <div class="center"></div>
+        </div>
+
+        <div class="stem"></div>
+
+        <div class="leaf left"></div>
+        <div class="leaf right"></div>
+      </div>
+
+      <!-- BUNGA 4 -->
+
+      <div class="flower four">
+        <div class="head">
+          <div class="petal p1"></div>
+          <div class="petal p2"></div>
+          <div class="petal p3"></div>
+          <div class="petal p4"></div>
+          <div class="petal p5"></div>
+          <div class="petal p6"></div>
+          <div class="petal p7"></div>
+          <div class="petal p8"></div>
+
+          <div class="center"></div>
+        </div>
+
+        <div class="stem"></div>
+
+        <div class="leaf left"></div>
+        <div class="leaf right"></div>
+      </div>
+
+      <!-- BUNGA 5 -->
+
+      <div class="flower five">
+        <div class="head">
+          <div class="petal p1"></div>
+          <div class="petal p2"></div>
+          <div class="petal p3"></div>
+          <div class="petal p4"></div>
+          <div class="petal p5"></div>
+          <div class="petal p6"></div>
+          <div class="petal p7"></div>
+          <div class="petal p8"></div>
+
+          <div class="center"></div>
+        </div>
+
+        <div class="stem"></div>
+
+        <div class="leaf left"></div>
+        <div class="leaf right"></div>
+      </div>
+    </div>
+
+    <!-- TANAH -->
+
+    <div class="ground"></div>
+
+    <!-- KELAP-KELIP -->
+
+    <div class="sparkle sp1"></div>
+    <div class="sparkle sp2"></div>
+    <div class="sparkle sp3"></div>
+    <div class="sparkle sp4"></div>
+  </body>
+</html>
